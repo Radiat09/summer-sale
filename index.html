@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summer Sale</title>
+    <!-- tailwind css and daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <!-- Hero section -->
+      <section class="hero min-h-screen bg-base-200 bg-amber-50">
+        <div class="hero-content flex-col lg:flex-row-reverse gap-12">
+          <img src="/images/Summer1.png" class="" />
+          <div class="text-center">
+            <h4 class="text-4xl font-medium">--- SALE FEVER ---</h4>
+            <h1 class="text-5xl font-bold md:mt-16 md:mb-16 mt-8 mb-8">
+              Purchase TK 200 or <br />
+              above & get <span class="text-fuchsia-500">20% off</span>
+            </h1>
+            <p>
+              <span class="text-2xl font-medium mr-3">Use Promo Code</span>
+              <button
+                id="btn-sell200"
+                class="btn bg-fuchsia-500 text-white hover:bg-fuchsia-600 text-2xl"
+              >
+                SELL200
+              </button>
+            </p>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section></section>
+    </main>
     <script src="js/main.js"></script>
   </body>
 </html>
