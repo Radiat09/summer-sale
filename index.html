@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summer Sale</title>
+    <link rel="shortcut icon" href="images/congo.png" type="image/x-icon" />
     <!-- tailwind css and daisy ui cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
@@ -35,18 +36,6 @@
       }
       .primary-text {
         color: #111;
-      }
-      .input-border {
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-        border-left: 1px solid #11111180;
-        border-top: 1px solid #11111180;
-        border-bottom: 1px solid #11111180;
-        border-right: none;
-      }
-      .btn-border {
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
       }
     </style>
   </head>
@@ -87,18 +76,27 @@
       <!-- cards section -->
       <section class="max-w-screen-xl mx-auto my-16 py-28">
         <!-- Card container -->
-        <div class="flex flex-col lg:flex-row gap-6 md:items-center">
+        <div class="flex flex-col lg:flex-row gap-3 xl:gap-6 md:items-center">
           <div class="flex flex-col md:flex-1">
             <!-- Kitchenware container -->
             <div>
               <h3 class="font-semibold text-4xl primary-text mb-9 text-center">
                 Kitchenware
               </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                id="first-card-container"
+                class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 xl:gap-6"
+              >
                 <!-- First Card -->
-                <div class="card w-auto text-center rounded-none p-3 bg-white">
-                  <figure class="bg-[#1111110d] p-6">
-                    <img src="/images/prod1.png" alt="Shoes" />
+                <div
+                  onclick="calculation('title-1','price-1')"
+                  id="first-card"
+                  class="flex flex-col items-center jus w-auto text-center rounded-none p-3 bg-white"
+                >
+                  <figure
+                    class="bg-[#1111110d] px-16 py-8 md:py-8 md:px-20 rounded-lg"
+                  >
+                    <img src="./images/prod1.png" class="md:w-28" alt="Shoes" />
                   </figure>
                   <div class="flex flex-col gap-3 mt-5 items-center">
                     <div class="flex gap-1">
@@ -108,18 +106,27 @@
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                     </div>
-                    <p class="text-lg font-semibold primary-text">
+                    <p id="title-1" class="text-lg font-semibold primary-text">
                       K. Accessories
                     </p>
                     <p class="text-xl price-text">
-                      <span id="price">39.00</span> TK
+                      <span id="price-1">39.00</span> TK
                     </p>
                   </div>
                 </div>
                 <!-- second card -->
-                <div class="card w-auto rounded-none text-center p-3 bg-white">
-                  <figure class="bg-[#1111110d] p-6">
-                    <img src="/images/prod2.png" alt="Shoes" />
+                <div
+                  onclick="calculation('title-2','price-2')"
+                  class="flex flex-col w-auto rounded-none text-center p-3 bg-white"
+                >
+                  <figure
+                    class="bg-[#1111110d] px-16 py-8 md:py-12 md:px-20 rounded-lg"
+                  >
+                    <img
+                      src="/images/prod2.png"
+                      class="md:w-28 mx-auto"
+                      alt="Shoes"
+                    />
                   </figure>
                   <div class="flex flex-col gap-3 mt-5 items-center">
                     <div class="flex gap-1">
@@ -129,18 +136,27 @@
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                     </div>
-                    <p class="text-lg font-semibold primary-text">
+                    <p id="title-2" class="text-lg font-semibold primary-text">
                       K. Accessories
                     </p>
                     <p class="text-xl price-text">
-                      <span id="price">25.00</span> TK
+                      <span id="price-2">25.00</span> TK
                     </p>
                   </div>
                 </div>
                 <!-- third card  -->
-                <div class="card w-auto rounded-none text-center p-3 bg-white">
-                  <figure class="bg-[#1111110d] p-6">
-                    <img src="/images/prod3.png" alt="Shoes" />
+                <div
+                  onclick="calculation('title-3','price-3')"
+                  class="flex flex-col w-auto rounded-none text-center p-3 bg-white"
+                >
+                  <figure
+                    class="bg-[#1111110d] px-16 py-8 md:py-12 md:px-20 rounded-lg"
+                  >
+                    <img
+                      src="/images/prod3.png"
+                      class="md:w-28 mx-auto"
+                      alt="Shoes"
+                    />
                   </figure>
                   <div class="flex flex-col gap-3 mt-5 items-center">
                     <div class="flex gap-1">
@@ -150,11 +166,11 @@
                       <i class="fa-solid fa-star" style="color: #ffc107"></i>
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                     </div>
-                    <p class="text-lg font-semibold primary-text">
+                    <p id="title-3" class="text-lg font-semibold primary-text">
                       Home Cooker
                     </p>
                     <p class="text-xl price-text">
-                      <span id="price">49.00</span> TK
+                      <span id="price-3">49.00</span> TK
                     </p>
                   </div>
                 </div>
@@ -166,12 +182,22 @@
                 Sportswear
               </h3>
               <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+                id="second-card-container"
+                class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
               >
                 <!-- First Card -->
-                <div class="card w-auto text-center rounded-none p-3 bg-white">
-                  <figure class="bg-[#1111110d] p-6">
-                    <img src="/images/prod4.png" alt="Shoes" />
+                <div
+                  onclick="calculation('title-4','price-4')"
+                  class="flex flex-col w-auto text-center rounded-none p-3 bg-white"
+                >
+                  <figure
+                    class="bg-[#1111110d] px-16 py-8 md:py-12 md:px-20 rounded-lg"
+                  >
+                    <img
+                      src="/images/prod4.png"
+                      class="md:w-28 mx-auto"
+                      alt="Shoes"
+                    />
                   </figure>
                   <div class="flex flex-col gap-3 mt-5 items-center">
                     <div class="flex gap-1">
@@ -181,18 +207,27 @@
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                     </div>
-                    <p class="text-lg font-semibold primary-text">
+                    <p id="title-4" class="text-lg font-semibold primary-text">
                       Sports Back Cap
                     </p>
                     <p class="text-xl price-text">
-                      <span id="price">49.00</span> TK
+                      <span id="price-4">49.00</span> TK
                     </p>
                   </div>
                 </div>
                 <!-- second card -->
-                <div class="card w-auto rounded-none text-center p-3 bg-white">
-                  <figure class="bg-[#1111110d] p-6">
-                    <img src="/images/prod5.png" alt="Shoes" />
+                <div
+                  onclick="calculation('title-5','price-5')"
+                  class="flex flex-col w-auto rounded-none text-center p-3 bg-white"
+                >
+                  <figure
+                    class="bg-[#1111110d] px-16 py-8 md:py-6 md:px-20 rounded-lg"
+                  >
+                    <img
+                      src="/images/prod5.png"
+                      class="md:w-28 mx-auto"
+                      alt="Shoes"
+                    />
                   </figure>
                   <div class="flex flex-col gap-3 mt-5 items-center">
                     <div class="flex gap-1">
@@ -202,18 +237,28 @@
                       <i class="fa-solid fa-star" style="color: #ffc107"></i>
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                     </div>
-                    <p class="text-lg font-semibold primary-text">
+                    <p id="title-5" class="text-lg font-semibold primary-text">
                       Full Jersey Set
                     </p>
                     <p class="text-xl price-text">
-                      <span id="price">69.00</span> TK
+                      <span id="price-5">69.00</span> TK
                     </p>
                   </div>
                 </div>
                 <!-- third card  -->
-                <div class="card w-auto rounded-none text-center p-3 bg-white">
-                  <figure class="bg-[#1111110d] p-6">
-                    <img src="/images/prod6.png" alt="Shoes" />
+                <div
+                  onclick="calculation('title-6','price-6')"
+                  onclick=""
+                  class="flex flex-col w-auto rounded-none text-center p-3 bg-white"
+                >
+                  <figure
+                    class="bg-[#1111110d] px-16 py-8 md:py-8 md:px-20 rounded-lg"
+                  >
+                    <img
+                      src="/images/prod6.png"
+                      class="md:w-28 mx-auto"
+                      alt="Shoes"
+                    />
                   </figure>
                   <div class="flex flex-col gap-3 mt-5 items-center">
                     <div class="flex gap-1">
@@ -223,11 +268,11 @@
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                       <i class="fa-regular fa-star" style="color: #ffc107"></i>
                     </div>
-                    <p class="text-lg font-semibold primary-text">
+                    <p id="title-6" class="text-lg font-semibold primary-text">
                       Sports cates
                     </p>
                     <p class="text-xl price-text">
-                      <span id="price">159.00</span> TK
+                      <span id="price-6">159.00</span> TK
                     </p>
                   </div>
                 </div>
@@ -235,7 +280,7 @@
             </div>
           </div>
           <!-- Cart -->
-          <div class="w-[342px] lg:justify-end mt-20">
+          <div class="w-[342px] self-center xl:justify-end mt-20">
             <!-- cupon -->
             <div class="bg-white p-12 mb-6">
               <p class="primary-text text-2xl font-medium mb-4">
@@ -243,13 +288,17 @@
               </p>
               <div class="flex gap-0">
                 <input
-                  class="input-border py-3 pl-4 w-3/4"
+                  id="cupon-input"
+                  class="rounded-lg rounded-r-none border-y border-l pl-4 w-3/4"
                   placeholder="Cupon code"
                   name=""
                   type="text"
                 />
                 <button
-                  class="py-2 px-3 bg-fuchsia-500 text-white hover:bg-fuchsia-600 text-xl font-semibold btn-border"
+                  disabled
+                  onclick="calculateDiscount()"
+                  id="btn-apply"
+                  class="btn bg-fuchsia-500 text-white hover:bg-fuchsia-600 text-xl font-semibold rounded-l-none rounded-r-lg"
                 >
                   Apply
                 </button>
@@ -257,21 +306,51 @@
             </div>
             <!-- Cart Content -->
             <div class="bg-white p-12 price-text">
+              <div id="dynamic-text" class="primary-text font-medium"></div>
               <div class="divider"></div>
               <p>Total Price: <span id="total-price">00</span> TK</p>
               <p>Discount: <span id="discount">00</span> TK</p>
-              <p>Total: <span id="total">00</span> TK</p>
+              <p>Total: <span id="total-final">00</span> TK</p>
               <div class="divider"></div>
               <button
+                disabled
+                id="btn-purchase"
+                onclick="my_modal_1.showModal()"
                 class="btn bg-fuchsia-500 text-white hover:bg-fuchsia-600 font-semibold text-xl"
               >
                 Make Purchase
               </button>
+              <!-- Open the modal using ID.showModal() method -->
+              <dialog id="my_modal_1" class="modal">
+                <form
+                  method="dialog"
+                  class="modal-box flex flex-col items-center justify-center 2xl:py-20 2xl:px-12"
+                >
+                  <img src="./images/congo.png" class="w-1/4" alt="" />
+                  <h3
+                    class="font-bold text-2xl 2xl:text-5xl primary-text 2xl:mt-10"
+                  >
+                    Congratulations!
+                  </h3>
+                  <p class="price-text 2xl:mt-4 2xl:mb-5">
+                    You Purchased the product
+                  </p>
+                  <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button
+                      id="btn-go-home"
+                      class="btn bg-fuchsia-500 text-white hover:bg-fuchsia-600 font-medium text-xl"
+                    >
+                      Go Home
+                    </button>
+                  </div>
+                </form>
+              </dialog>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
